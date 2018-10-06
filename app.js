@@ -16,14 +16,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 mongoose.connect('mongodb://localhost/CharityChecker', { useNewUrlParser: true });
 
 //Routes
-// require('./controllers/posts')(app);
+require('./controllers/posts')(app);
 // require('./controllers/users')(app);
 
 module.exports = (app);
-
-app.get('/', (req, res) => {
-    res.render('home');
-})
 
 app.listen(3000, () => {
     console.log("WE OUTCHEA!")
