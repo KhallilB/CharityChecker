@@ -9,12 +9,17 @@ module.exports = (app) => {
     //HOME
     app.get('/', (req, res) => {
         res.render('home');
-    })
+    });
 
     //INDEX
     app.get('/posts', (req, res) => {
-        res.render('posts-index', { posts: posts });
-    })
+        Post.findById()
+            .then((posts) => {
+                res.render('posts-index', { posts: posts });
+            }).catch((err) => {
+                console.log('Error', err)
+            });
+    });
 
     //CREATE
     //READ
