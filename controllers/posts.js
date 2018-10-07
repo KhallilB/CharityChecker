@@ -13,7 +13,7 @@ module.exports = (app) => {
 
     //INDEX
     app.get('/posts', (req, res) => {
-        Post.findById()
+        Post.find()
             .then((posts) => {
                 res.render('posts-index', { posts: posts });
             }).catch((err) => {
@@ -23,10 +23,29 @@ module.exports = (app) => {
 
     //NEW
     app.get('/posts/new', (req, res) => {
-        res.render('posts-new');
+        res.render('posts-new', {} );
     });
 
     //CREATE
+    app.post('/posts', (req, res) => {
+        console.log(req.body)
+        Post.create(req.body)
+            .then((post) => {
+                res.redirect(`/posts/${post._id}`)
+            }).catch((err) => {
+                console.log('Error', err);
+            });
+    });
+
+    //SHOW
+    app.get('/posts/:id', (req, res) => {
+        Post.findById(req.params.id)
+            .then((post) => {
+                res.render('posts-show', { post: post});
+            }).catch((err) => {
+                console.log('Error', err)
+            });
+    });
     //READ
     
     //UPDATE

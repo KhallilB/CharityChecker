@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 //Database
-mongoose.connect('mongodb://localhost/CharityChecker', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost/charitychecker', { useNewUrlParser: true });
 
 //Routes
 require('./controllers/posts')(app);

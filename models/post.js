@@ -5,7 +5,7 @@ const postSchema = {
 
     charityName: String,
     name: String,
-    amountGiven: Number
+    amountGiven: String
 }
 
 module.exports =mongoose.model('Post', postSchema)
