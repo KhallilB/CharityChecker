@@ -1,16 +1,29 @@
+<!--CHARITY NAME-->
 <form method="POST" action="/posts">
   <div class="form-group">
     <label for="charityName">Charity Name</label>
     <input type="text" class="form-control" id="charityName" name="charityName">
   </div>
+
+  <!--NAME-->
   <div class="form-group">
     <label for="name">Name</label>
     <input type="text" class="form-control" id="name" name="name">
   </div>
+
+<!--AMOUNT GIVEN-->
   <div class="form-group">
       <label for="amountGiven">Amount Given</label>
     <input type="text" class="form-control" id="amountGiven" name="amountGiven">
   </div>
+
+<!--DESCRIPTION-->
+  <div class="form-group">
+    <label for="description">What does this charity mean to you?</label>
+    <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+  </div>
+
+<!--SUBMIT BUTTON-->
   <div>
       <form method="POST" action="/posts">
         <button type="submit" class="btn btn-primary">POST IT!</button>
