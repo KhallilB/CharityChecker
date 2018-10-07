@@ -2,9 +2,9 @@ const Post = require('../models/post')
 
 module.exports = (app) => {
 
-    let posts = [
-        { name: 'Bob', charityName: 'Bobbers', amountGiven: 69.69 }
-    ]
+    // let posts = [
+    //     { name: 'Bob', charityName: 'Bobbers', amountGiven: 69.69 }
+    // ]
 
     //HOME
     app.get('/', (req, res) => {
@@ -19,6 +19,11 @@ module.exports = (app) => {
             }).catch((err) => {
                 console.log('Error', err)
             });
+    });
+
+    //NEW
+    app.get('/posts/new', (req, res) => {
+        res.render('posts-new');
     });
 
     //CREATE
