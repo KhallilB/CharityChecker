@@ -59,7 +59,7 @@ module.exports = (app) => {
 
     //UPDATE
     app.put('/posts/:id', (req, res) => {
-        Post.findOneAndUpdate({ _id: req.params.id }, req.body)
+        Post.findByIdAndUpdate({ _id: req.params.id }, req.body)
         .then((post) => {
             console.log(req.params.id)
             res.redirect(`/posts/${post._id}`)
