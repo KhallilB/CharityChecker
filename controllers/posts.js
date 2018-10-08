@@ -68,7 +68,13 @@ module.exports = (app) => {
         });
     });
     
-    //UPDATE
     //DELETE
-    
+    app.delete('/posts/:id', (req, res) => {
+        Post.findByIdAndDelete({ _id: req.params.id })
+            .then((post) => {
+                res.redirect('/posts');
+            }).catch((err) => {
+                console.log('Error', err)
+            }); 
+    });
 }
