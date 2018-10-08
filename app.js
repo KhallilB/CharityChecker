@@ -5,6 +5,7 @@ const exphbs =  require('express-handlebars');
 const methodOverride = require("method-override");
 
 const app = express();
+
 app.use(methodOverride('_method'));
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');

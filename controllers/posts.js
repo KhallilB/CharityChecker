@@ -46,7 +46,27 @@ module.exports = (app) => {
                 console.log('Error', err)
             });
     });
-    //READ
+    
+    //EDIT
+    app.get('/posts/:id/edit', (req, res) => {
+        Post.findById(req.params.id)
+            .then((post) => {
+                res.render('posts-edit', { post: post });
+            }).catch((err) => {
+                console.log('Error', err)
+            });
+    });
+
+    //UPDATE
+    app.put('/posts/:id', (req, res) => {
+        Post.findOneAndUpdate({ _id: req.params.id }, req.body)
+        .then((post) => {
+            console.log(req.params.id)
+            res.redirect(`/posts/${post._id}`)
+        }).catch((err) => {
+            console.log('Error', err)
+        });
+    });
     
     //UPDATE
     //DELETE

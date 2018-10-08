@@ -1,10 +1,18 @@
 <a href="/">Back to Home</a>
 
 <div class="row">
+
   <div class="col-sm-6 col-sm-offset-3">
     <h1>{{post.charityName}}</h1>
     <h3>{{post.name}}</h2>
     <h2>{{post.amountGiven}}</p>
     <p>{{post.description}}</p>
     </div>
+
+    <div>
+      <form method="GET" action="/posts/{{post._id}}/edit">
+        <button type="submit" class="btn btn-primary">EDIT</button>
+      </form>
+  </div>
+
 </div>

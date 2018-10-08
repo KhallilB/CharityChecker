@@ -1,10 +1,11 @@
-<h1>DONATE TO A CHARITY!</h1><br>
-
+<h1>EDIT</h1>
 <!--CHARITY NAME-->
-<form method="POST" action="/posts">
+<form method="POST" action="/posts/{{post._id}}?_method=PUT">
   <div class="form-group">
     <label for="charityName">Charity Name</label>
-    <input type="text" class="form-control" id="charityName" name="charityName">
+    <input type="text" class="form-control" id="charityName" name="charityName" value="{{post.charityName}}" disabled>
+    <input type="hidden" class="form-control" id="charityName" name="charityName" value="{{post.charityName}}">
+
   </div>
 
   <!--NAME-->
@@ -16,7 +17,8 @@
 <!--AMOUNT GIVEN-->
   <div class="form-group">
       <label for="amountGiven">Amount Given</label>
-    <input type="text" class="form-control" id="amountGiven" name="amountGiven">
+    <input type="text" class="form-control" id="amountGiven" name="amountGiven" value="{{post.amountGiven}}" disabled>
+    <input type="hidden" class="form-control" id="amountGiven" name="amountGiven" value="{{post.amountGiven}}">
   </div>
 
 <!--DESCRIPTION-->
@@ -27,6 +29,6 @@
 
 <!--SUBMIT BUTTON-->
   <div>
-        <button type="submit" class="btn btn-primary">POST IT!</button>
+        <button type="submit" class="btn btn-primary">EDIT IT!</button>
   </div>
 </form>
