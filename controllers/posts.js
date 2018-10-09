@@ -2,10 +2,6 @@ const Post = require('../models/post')
 
 module.exports = (app) => {
 
-    // let posts = [
-    //     { name: 'Bob', charityName: 'Bobbers', amountGiven: 69.69 }
-    // ]
-
     //HOME
     app.get('/', (req, res) => {
         res.render('home');
