@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const schema = mongoose.schema
 
 const postSchema = {
 
@@ -9,4 +9,4 @@ const postSchema = {
     description: String
 }
 
-module.exports =mongoose.model('Post', postSchema)
+module.exports = mongoose.model('Post', postSchema)

@@ -18,7 +18,7 @@ mongoose.connect('mongodb://localhost/charitychecker', { useNewUrlParser: true }
 
 //Routes
 require('./controllers/posts')(app);
-// require('./controllers/comments')(app);
+require('./controllers/comments')(app);
 
 module.exports = (app);
 
