@@ -6,7 +6,7 @@ const commentSchema = {
 
     name: String,
     description: String,
-    postId: [{ type: String, ref: 'Post' }]  
+    postId: { type: String, ref: 'Post' }
 }
 
 module.exports = mongoose.model('Comment', commentSchema);

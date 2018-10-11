@@ -1,4 +1,5 @@
 const Post = require('../models/post')
+const Comment = require('../models/comment')
 
 module.exports = (app) => {
 
@@ -37,11 +38,17 @@ module.exports = (app) => {
     app.get('/posts/:id', (req, res) => {
         Post.findById(req.params.id)
             .then((post) => {
-                res.render('posts-show', { post: post});
+                Comment.find({ postId: req.params.id })
+                    .then((comments) => {
+                        res.render('posts-show', { post: post, comments: comments })
+                    }).catch((err) => {
+                        console.log('Error', err)
+                    })
             }).catch((err) => {
                 console.log('Error', err)
             });
     });
+    
     
     //EDIT
     app.get('/posts/:id/edit', (req, res) => {
