@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 //Database
-mongoose.connect('mongodb://localhost/charitychecker', { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/charitychecker', { useNewUrlParser: true });
 
 //Routes
 require('./controllers/posts')(app);
@@ -22,6 +22,7 @@ require('./controllers/comments')(app);
 
 module.exports = (app);
 
-app.listen(3000, () => {
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
     console.log("WE OUTCHEA!")
 })
